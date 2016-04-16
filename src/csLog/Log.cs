@@ -23,6 +23,7 @@ namespace csLog
         public Log(string logsdir, string logsubdir = null, string intimestamp = null, string tsformat = "yyyyMMdd-HHmmss.fffffff")
         {
             buffer = new Dictionary<string, string>();
+            removebuf = new List<string>();
 
             if (intimestamp == null)
             {
@@ -39,6 +40,11 @@ namespace csLog
         }
 
         public Log() : this(Environment.CurrentDirectory + @"\logs") { }
+
+        public Dictionary<string, string> GetBuffer()
+        {
+            return buffer;
+        }
 
         internal void MakeDir()
         {
