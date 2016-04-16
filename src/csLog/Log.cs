@@ -10,7 +10,7 @@ namespace csLog
     public class Log
     {
         public static string LibName = "csLog";
-        public static string Version = "1.00";
+        public static string Version = "1.10";
         public static string Author = "Kris Craig";
         public static string Email = "kriscraig@php.net";
         public static string Repo = "https://github.com/sirkris/csLog";
