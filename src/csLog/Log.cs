@@ -10,7 +10,7 @@ namespace csLog
     public class Log
     {
         public static string LibName = "csLog";
-        public static string Version = "1.00";
+        public static string Version = "1.10";
         public static string Author = "Kris Craig";
         public static string Email = "kriscraig@php.net";
         public static string Repo = "https://github.com/sirkris/csLog";
@@ -23,6 +23,7 @@ namespace csLog
         public Log(string logsdir, string logsubdir = null, string intimestamp = null, string tsformat = "yyyyMMdd-HHmmss.fffffff")
         {
             buffer = new Dictionary<string, string>();
+            removebuf = new List<string>();
 
             if (intimestamp == null)
             {
@@ -39,6 +40,11 @@ namespace csLog
         }
 
         public Log() : this(Environment.CurrentDirectory + @"\logs") { }
+
+        public Dictionary<string, string> GetBuffer()
+        {
+            return buffer;
+        }
 
         internal void MakeDir()
         {
